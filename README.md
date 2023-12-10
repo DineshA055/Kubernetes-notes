@@ -1,7 +1,7 @@
 # Kubernetes-notes
 
-Kubernetes Architecture Explained
-=====================================
+Simplified Kubernetes Architecture Components Explained :- 
+======================================================
 
 This document explains the key components that make up the architecture of a Kubernetes cluster, in simple terms
 
@@ -59,14 +59,17 @@ Think of this as the "traffic cop" for network communication either between Pods
 Container Runtime
 ==================
 This is the software used to run containers. Docker is commonly used, but other runtimes like containerd can also be used.
-Other Components
 
+Other Components:-
+================
 Pod
 =====
 The smallest unit in Kubernetes, a Pod is a group of one or more containers. Think of it like an apartment in an apartment building.
-Service
 
-This is like a phone directory for Pods. Since Pods can come and go, a Service provides a stable "address" so that other parts of your application can find them.
+SERVICE
+=======
+
+This is like a phone directory for Pods. Since Pods can come and go, a Service provides has a stable "address" so that other parts of your application can find them.
 
 Volume
 =======
