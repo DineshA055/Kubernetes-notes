@@ -11,6 +11,7 @@ Table of Contents
     Other Components
 
 
+![kubernetes-Architecture](https://github.com/DineshA055/Kubernetes-notes/assets/101075223/2077d0cc-92a6-43ea-b8e0-e97b22f7289b)
 
     
 
