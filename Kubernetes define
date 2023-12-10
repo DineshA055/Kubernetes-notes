@@ -1,0 +1,86 @@
+
+What is Kubernetes ?
+
+==>Kubernetes is an open-source container orchestration system for automating software deployment, scaling, and management.
+
+why kubernetes is so popular ?
+
+==>Another reason for Kubernetes' popularity is its scalability. Kubernetes allows organizations to scale their containerized applications up or down 
+based on demand, making it easy to handle traffic spikes and unexpected increases in user activity. 
+Kubernetes also provides a high level of reliability and availability.
+
+What is the main benefit of Kubernetes?
+
+=>Kubernetes makes it easy to scale applications up or down by adding or removing containers as needed. This allows applications to automatically
+ adjust to changes in demand and ensures that they can handle large volumes of traffic
+
+what is master node ?
+
+==>The master node is responsible for cluster management and for providing the API that is used to configure and manage resources within the Kubernetes cluster.
+ Kubernetes master node components can be run within Kubernetes itself, as a set of containers within a dedicated pod.
+
+What is a cluster in Kubernetes?
+
+==>A Kubernetes (K8s) cluster is a grouping of nodes that run containerized apps in an efficient, automated, distributed, and scalable manner. 
+K8s clusters allow engineers to orchestrate and monitor containers across multiple physical, virtual, and cloud servers
+
+What is cluster and container?
+=> Cluster
+A cluster consists of several nodes.
+
+=> Container
+It can be a virtual machine or a physical machine. A single node can run one or more pods. Each pod contains one or more containers. 
+ A container hosts the application code and all the dependencies the app requires to run properlly
+
+What is Mater-Node and Worker Node ?
+==> Components of the master node include the API Server, etcd (a database holding the cluster state), Controller Manager, and Scheduler. Worker nodes—these are nodes on which you can run containerized workloads. 
+Each node runs the kubelet—an agent that enables the Kubernetes control plane to control the node.
+
+##### Kubernetes cluster capacity When determining the capacity of your cluster, there are many ways to approach sizing the nodes. 
+For example, if you calculated a cluster sizing of 16 CPU and 64GB RAM, 
+you could break down the node sizing into these options: 2 nodes: 8 CPU / 32 GB RAM. 4 nodes: 4 CPU / 16 GB RAM.
+
+COMPONENTS OF MASTER NODE and USEFUL FOR :-
+
+What is API server ?
+
+==> the API is the interface used to manage, create, and configure Kubernetes clusters.
+ It's how the users, external components, and parts of your cluster all communicate with each other.
+
+what is Scheduler ?
+==>Kubernetes scheduling is simply the process of assigning pods to the matched nodes in a cluster.
+ A scheduler watches for newly created pods and finds the best node for their assignment.
+
+what is Controller Manager?
+==> Controller Manager is responsible for managing various controllers that ensure the desired state of the cluster is maintained. 
+By keeping these responsibilities separate, it is easier to maintain and upgrade each component independently.
+
+What are pods and nodes in Kubernetes?
+=>Pods are simply the smallest unit of execution in Kubernetes, consisting of one or more containers, each with one or more application and its binaries. 
+=>Nodes are the physical servers or VMs that comprise a Kubernetes Cluster.
+
+What is ETCD ?
+==>etcd is an open source distributed key-value store used to hold and manage the critical information that distributed systems need to keep running. 
+Most notably, it manages the configuration data, state data, and metadata for Kubernetes, the popular container orchestration platform
+
+size of etcd in Kubernetes   =>   Amazon EKS provisions the maximum recommended database size for etcd in Kubernetes, 
+which is 8GB. While 8 GB of etcd database is sufficient for most customer use cases, there are both 
+
+what is cloud contoller manager ?
+ ->primarily responsible for creating and updating AWS loadbalancers (classic and NLB) and node
+ ->Responsible for service-related events. This controller will listen to events like create, delete, update related to service and configure
+ ->This component includes control loops that help manage a Kubernetes cluster's underlying infrastructure.
+
+
+COMPONENTS OF WORKER NODE and USEFUL FOR :-
+
+what is KUBLET?
+==> kubelet – watches the API server for pods on that node and makes sure they are running.
+ cAdvisor – collects metrics about pods running on that particular node. 
+
+What is KUBE-PROXY ?
+==> kube-proxy – watches the API server for pods/services changes in order to maintain the network up
+=====>kube-proxy is a network proxy that runs on each node in your cluster, implementing part of the Kubernetes Service concept. 
+kube-proxy maintains network rules on nodes. 
+These network rules allow network communication to your Pods from network sessions inside or outside of your cluster.
+
