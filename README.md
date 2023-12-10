@@ -44,9 +44,9 @@ CLOUD CONTROL MANAGER
 =====================
 This is a specialized component that allows Kubernetes to interact with the underlying cloud provider, like AWS or Azure. It helps in tasks like setting up load balancers and persistent storage.
 
-==============================================================
+==============================================
 WORKER NODE COMPONENETS
-==============================================================
+==============================================
 KUBELET
 =======
 This is the "manager" for each worker node. It ensures all containers on the node are healthy and running as they should be.
