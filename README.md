@@ -50,7 +50,9 @@ WORKER NODE COMPONENETS
 KUBELET
 =======
 This is the "manager" for each worker node. It ensures all containers on the node are healthy and running as they should be.
-kube-proxy
+
+KUBE-PROXY
+==========
 
 Think of this as the "traffic cop" for network communication either between Pods or from external clients to Pods. It helps in routing the network traffic appropriately.
 
