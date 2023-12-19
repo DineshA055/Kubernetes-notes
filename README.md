@@ -22,6 +22,57 @@ Kubernetes Architecture Diagram
 Control Plane (Master Node Components)
 ========================================
 
+
+Kubernetes architecure broken down into two parts control plane and data plane has worker node
+
+Control plane includes   -> {Kube-controller-manager}    {etcd}   {kube-apiserver}    {kube-scheduler}
+
+Node (data plane )     ->   includes {kubelet}     {kube-proxy}     {Container-Run-time}
+
+Control plane provides core kubernetes services and Orchestration of all application workloads and while actuall application workload run on the Node components 
+
+In cloud patform control plane is automatically created / configured  / managed by cloud platform 
+
+Four main service runnning in control plane 
+
+1. Kube-api-server   = [ how the underline api's are exposed and this components provide the interaction for management tools such as "kubectl" ]
+   
+2. ETCD    = [ Maintains the state of the kubernetes cluster and its configurations, higly available service , key-value store with kubernetes ]
+   
+3. Kube-controller-manager = [ Oversees smaller number of controllers manager that perform actions such has replicating pods and handling node            operations ]
+   
+4. kube-scheduler = [when you create or scale a applications kube-scheduler determines what node to run the workload and when it should start there]
+
+   
+ WokerNode [data-plane]
+
+ 1.Kublet = [ kubelet is kubernetes agent and process orchestration request from the controller plane and schedule the requested containers ]
+
+2.kubeproxy = [ Virtual network is handled by kube-proxy in each node and proxy routes network traffic and manages IP addresses for srevices and pods]
+
+3. Container-Runtime = [ Conatiner runtime is the component allows containerized applications to run and interact with additional resources such has virtual network and storage ] 
+
+LET SEE HOW KUBERNETES CLUSTER INSIDE NODE WORKS EACH OHER SHARING REQUEST AND PERFORM ACTIONS ☑️
+Architure well defined
+
+
+
+
+
+
+
+
+
+step 1:- A kubectl gives a pod deployment manifest to API Server   -----> and then api server creates a deployment resource--------that information stored and saved in ETCD 
+step2:- Deployment controller watches for any new deployment resource create replicaset resource 
+step3:- Replicaset controller watches for any new replicaset resources -------replicaset controller creates the pods resource based on how many replicaset and actual pods are present    
+step4 :- Kubescheduler watches for unbond pod resources and schedule them on target node
+step5:- Kubelet calls container runtime interface and container network interface to create a pod in container with networking configured
+step6:- CRI (container runtime interface ) calls host compute layer (HCL) to create container and host networking service called (HNS) to create the endpoint
+step7:- Kube-proxy wataches for any new endpoint and program HNS with load balancer and access control list
+
+
+
 API SEREVER
 ===========
 
