@@ -85,11 +85,17 @@ Architure well defined
 
 
 step 1:- A kubectl gives a pod deployment manifest to API Server   -----> and then api server creates a deployment resource--------that information stored and saved in ETCD 
+
 step2:- Deployment controller watches for any new deployment resource create replicaset resource 
-step3:- Replicaset controller watches for any new replicaset resources -------replicaset controller creates the pods resource based on how many replicaset and actual pods are present    
+
+step3:- Replicaset controller watches for any new replicaset resources -------replicaset controller creates the pods resource based on how many replicaset and actual pods are present 
+
 step4 :- Kubescheduler watches for unbond pod resources and schedule them on target node
+
 step5:- Kubelet calls container runtime interface and container network interface to create a pod in container with networking configured
+
 step6:- CRI (container runtime interface ) calls host compute layer (HCL) to create container and host networking service called (HNS) to create the endpoint
+
 step7:- Kube-proxy wataches for any new endpoint and program HNS with load balancer and access control list
 
 
