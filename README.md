@@ -37,23 +37,37 @@ Four main service runnning in control plane
 
 1. Kube-api-server   = [ how the underline api's are exposed and this components provide the interaction for management tools such as "kubectl" ]
    
+   
 2. ETCD    = [ Maintains the state of the kubernetes cluster and its configurations, higly available service , key-value store with kubernetes ]
+
    
 3. Kube-controller-manager = [ Oversees smaller number of controllers manager that perform actions such has replicating pods and handling node            operations ]
+
    
 4. kube-scheduler = [when you create or scale a applications kube-scheduler determines what node to run the workload and when it should start there]
+
 
    
  WokerNode [data-plane]
 
+
  1.Kublet = [ kubelet is kubernetes agent and process orchestration request from the controller plane and schedule the requested containers ]
+
 
 2.kubeproxy = [ Virtual network is handled by kube-proxy in each node and proxy routes network traffic and manages IP addresses for srevices and pods]
 
+
 3. Container-Runtime = [ Conatiner runtime is the component allows containerized applications to run and interact with additional resources such has virtual network and storage ] 
+
+
 
 LET SEE HOW KUBERNETES CLUSTER INSIDE NODE WORKS EACH OHER SHARING REQUEST AND PERFORM ACTIONS ☑️
 Architure well defined
+
+
+
+
+
 
 
 
