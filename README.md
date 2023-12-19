@@ -84,7 +84,7 @@ Architure well defined
 
 
 
-step 1:- A kubectl gives a pod deployment manifest to API Server   -----> and then api server creates a deployment resource--------that information stored and saved in ETCD 
+step 1:- A kubectl gives a pod deployment manifest to API Server   -----> and then api server creates a deployment resource--------that information saved in ETCD 
 
 step2:- Deployment controller watches for any new deployment resource create replicaset resource 
 
